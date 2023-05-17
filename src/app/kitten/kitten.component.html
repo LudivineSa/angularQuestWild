@@ -1,0 +1,74 @@
+
+<div class="flex">
+  <div>
+    <h1>Les chatons à l'adoption</h1>
+  <div class="container">
+    <p *ngIf="allAdopted" class="greenAlert">Vous avez adopté tous les chatons !</p>
+    <div *ngFor="let cat of kitten" >
+      <div *ngIf="!cat.adopted" class="kittens">
+        <img src="{{cat.picture}}" alt="photo de chaton" width="200px" height="200px">
+        <div class="info">
+          <p id="name">{{cat.name}}</p>
+          <p>{{cat.race}}</p>
+          <p>{{ cat.birthdate | date:'dd/MM/yyyy' }}</p>
+          <button type="button" (click)="adoptCat(cat)" class="adopt">Adopter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="allAdopted" class="success">
+  <h1>Bravo ! Tous les chatons ont été adopté ! </h1>
+  <img class="cat" src="https://us.123rf.com/450wm/photodeti/photodeti1802/photodeti180200465/96473251-chat-heureux-dans-le-chapeau-de-f%C3%AAte-avec-un-bouquet-de-tulipes-tenant-un-verre-de-champagne-isol%C3%A9.jpg?ver=6" />
+</div>
+<div>
+    <h1>Les chatons que j'ai adopté</h1>
+    <div class="container2">
+      <p *ngIf="noneAdopted" class="redAlert">Vous n'avez pas encore adopté de chaton ! </p>
+      <div *ngFor="let cat of kitten" >
+        <div *ngIf="cat.adopted" class="kittens">
+          <img src="{{cat.picture}}" alt="photo de chaton" width="200px" height="200px">
+          <div class="info">
+            <p id="name">{{cat.name}}</p>
+            <p>{{cat.race}}</p>
+            <p>{{ cat.birthdate | date:'dd/MM/yyyy' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<form #newKittenForm="ngForm" (ngSubmit)="newKittenForm.valid && onSubmit()">
+  <h1>Ajouter un chaton à l'adoption</h1>
+  <div>
+    <label for="name">Nom</label>
+    <input type="text" id="name" name="name" [(ngModel)]="newKitten.name" #name="ngModel" required>
+    <div *ngIf="name.errors && newKittenForm.submitted">
+      <span *ngIf="name.errors?.['required']" class="error">Le prénom est requis</span>
+    </div>
+  </div>
+  <div>
+    <label for="race">Race</label>
+    <input type="text" id="race" name="race" [(ngModel)]="newKitten.race" #race="ngModel" required>
+    <div *ngIf="race.errors && newKittenForm.submitted">
+      <span *ngIf="race.errors?.['required']" class="error">La race est requise</span>
+    </div>
+  </div>
+  <div>
+    <label for="birthdate">Date de naissance</label>
+    <input type="date" id="birthdate" name="birthdate" [(ngModel)]="newKitten.birthdate" #birthdate="ngModel" required>
+    <div *ngIf="birthdate.errors && newKittenForm.submitted" class="error">
+      <span ng-show="myForm.input.$error.required" class="error">La date de naissance est requise</span>
+    </div>
+  </div>
+  <div>
+    <label for="picture">URL de la photo</label>
+    <input type="text" id="picture" name="picture" [(ngModel)]="newKitten.picture" #picture="ngModel" required>
+    <div *ngIf="picture.errors && newKittenForm.submitted">
+      <span *ngIf="picture.errors?.['required']" class="error">Merci de saisir une URL</span>
+    </div>
+  </div>
+  <button type=submit class="submit">Envoyer</button>
+</form>

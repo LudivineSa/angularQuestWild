@@ -4,11 +4,15 @@ import { UserProfileComponent } from "./user-profile/user-profile.component";
 import { UserComponent } from "./user/user.component";
 import { SearchMovieComponent } from "./search-movie/search-movie.component";
 import { DeveloperComponentComponent } from "./developer-component/developer-component.component";
+import { OnomatopiaComponent } from "./onomatopia/onomatopia.component";
+import { KittenComponent } from "./kitten/kitten.component";
 
 export const ROUTES: Routes = [
   { path: "sign-up", component: SignUpComponent },
   { path: "user", component: UserComponent },
   { path: "search-movie", component: SearchMovieComponent},
   { path: "developer", component: DeveloperComponentComponent},
+  { path: "onomatopia", component: OnomatopiaComponent},
+  { path: "kitten", component: KittenComponent},
   { path: "", component: UserProfileComponent }
 ];
