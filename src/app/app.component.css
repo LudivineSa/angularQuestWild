@@ -1,0 +1,15 @@
+.page {
+  height: 100vh;
+  display: grid;
+}
+
+.firstline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondline {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}

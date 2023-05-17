@@ -1,0 +1,12 @@
+<main>
+  <img [src]="user.src" />
+  <h2>Nom : {{user.lastname}}</h2>
+  <h2>Prénom : {{user.firstname}}</h2>
+  <p [style.display]="display">Age : {{user.age}}</p>
+  <button (click)="click()">{{showAge}} mon age</button>
+  <p>Citation : {{user.quote}}</p>
+  <div>
+    <h3>Changer ma citation :</h3>
+    <input type="text" [(ngModel)]="user.quote" />
+  </div>
+</main>

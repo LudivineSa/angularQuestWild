@@ -1,0 +1,9 @@
+.logo {
+  display: block;
+  width: 10rem;
+}
+
+.skill {
+  margin: 2rem;
+  border: 1px solid #ccc;
+}
