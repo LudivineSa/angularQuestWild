@@ -17,6 +17,7 @@ import { SkillComponentComponent } from './skill-component/skill-component.compo
 import { CreateOnomatopiaComponent } from './create-onomatopia/create-onomatopia.component';
 import { OnomatopiaComponent } from './onomatopia/onomatopia.component';
 import { KittenComponent } from './kitten/kitten.component';
+import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { KittenComponent } from './kitten/kitten.component';
     SkillComponentComponent,
     CreateOnomatopiaComponent,
     OnomatopiaComponent,
-    KittenComponent
+    KittenComponent,
+    CocktailListComponentComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule, FormsModule, RouterModule.forRoot(ROUTES)],
   providers: [    DatePipe,
