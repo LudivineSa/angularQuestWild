@@ -18,6 +18,7 @@ import { CreateOnomatopiaComponent } from './create-onomatopia/create-onomatopia
 import { OnomatopiaComponent } from './onomatopia/onomatopia.component';
 import { KittenComponent } from './kitten/kitten.component';
 import { CocktailListComponentComponent } from './cocktail-list-component/cocktail-list-component.component';
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { CocktailListComponentComponent } from './cocktail-list-component/cockta
     KittenComponent,
     CocktailListComponentComponent
   ],
-  imports: [BrowserModule, ReactiveFormsModule, FormsModule, RouterModule.forRoot(ROUTES)],
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, RouterModule.forRoot(ROUTES), HttpClientModule],
   providers: [    DatePipe,
   ],
   bootstrap: [AppComponent]

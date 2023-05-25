@@ -1,0 +1,17 @@
+[
+  {
+      "name": "Sex on the beach",
+      "price": 10,
+      "image": "https://www.thecocktaildb.com/images/media/drink/lijtw51551455287.jpg"
+  },
+  {
+      "name": "Marguarita",
+      "price": 13,
+      "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg"
+  },
+  {
+      "name": "Martini",
+      "price": 8,
+      "image": "https://www.thecocktaildb.com/images/media/drink/71t8581504353095.jpg"
+  }
+]

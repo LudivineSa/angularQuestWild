@@ -1,5 +1,17 @@
+<h2>Cocktail de la quête 9</h2>
 <ul  class="cocktails">
   <li *ngFor="let cocktail of cocktails">
+    <div class="flex">
+      <h2>{{cocktail.name}}</h2>
+      <p>{{cocktail.price}}€</p>
+    </div>
+    <img src={{cocktail.image}} alt={{cocktail.name}} />
+  </li>
+</ul>
+
+<h2>Cocktail de la quête 10</h2>
+<ul class="cocktails">
+  <li *ngFor="let cocktail of cocktailsObservable">
     <div class="flex">
       <h2>{{cocktail.name}}</h2>
       <p>{{cocktail.price}}€</p>
