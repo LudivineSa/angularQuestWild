@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../models/User';
 import { FormBuilder } from '@angular/forms';
+import { emailValidator } from './email-validator';
 
 @Component({
   selector: 'app-subscrpition',
@@ -40,7 +41,7 @@ export class SubscrpitionComponent {
 
   userForm = this.fb.group({
     credentials : this.fb.group({
-      email: '',
+      email: ['', [Validators.required, emailValidator]],
       password: ''
     })
   })

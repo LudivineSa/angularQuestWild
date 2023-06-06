@@ -23,10 +23,12 @@
 
 <div>
   <h1>Inscription avec React Form (quête 2)</h1>
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="userForm" (ngSubmit)="userForm.valid && onSubmit()">
     <div formGroupName="credentials">
       <input type="email" formControlName="email" placeholder="Email" />
-      <input type="password" formControlName="password" placeholder="Mot de passe"/>
+        <div [hidden]="!userForm.get('credentials.email')?.errors?.['required']">Email is required.</div>
+        <div [hidden]="!userForm.get('credentials.email')?.invalid">Merci de mettre un email valide finissant par wilder.school</div>
+        <input type="password" formControlName="password" placeholder="Mot de passe"/>
       <button type="submit">Envoyer</button>
     </div>
   </form>
