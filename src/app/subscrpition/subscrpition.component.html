@@ -1,0 +1,23 @@
+<div>
+  <h1>Inscription avec Reactive Form</h1>
+  <div >
+    <input type="text" [formControl]="username" placeholder="Nom d'utilisateur" />
+    <input type="text" [formControl]="email" placeholder="Email" />
+    <input type="password" [formControl]="password" placeholder="Mot de passe"/>
+    <div [formGroup]="address">
+      <input type="text" formControlName="street" placeholder="Rue" />
+      <input type="text" formControlName="city" placeholder="Ville" />
+      <input type="text" formControlName="postalCode" placeholder="Code postal" />
+    </div>
+    <button (click)="register()">S'inscrire</button>
+  </div>
+
+  <div>
+    <p>Username: {{ user.firstname }} </p>
+    <p>Email: {{ user.email }} </p>
+    <p>Password: {{ user.password }} </p>
+    <p>Street: {{ user.address.street }} </p>
+    <p>City: {{ user.address.city }} </p>
+    <p>Postal Code: {{ user.address.postalCode }} </p>
+
+</div>

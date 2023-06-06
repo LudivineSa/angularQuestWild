@@ -7,6 +7,8 @@ import { DeveloperComponentComponent } from "./developer-component/developer-com
 import { OnomatopiaComponent } from "./onomatopia/onomatopia.component";
 import { KittenComponent } from "./kitten/kitten.component";
 import { CocktailListComponentComponent } from "./cocktail-list-component/cocktail-list-component.component";
+import { NasaComponent } from "./nasa/nasa.component";
+import { SubscrpitionComponent } from "./subscrpition/subscrpition.component";
 
 export const ROUTES: Routes = [
   { path: "sign-up", component: SignUpComponent },
@@ -16,5 +18,7 @@ export const ROUTES: Routes = [
   { path: "onomatopia", component: OnomatopiaComponent},
   { path: "kitten", component: KittenComponent},
   { path: "cocktail", component: CocktailListComponentComponent},
+  { path: "nasa", component: NasaComponent},
+  { path: "subscription", component: SubscrpitionComponent},
   { path: "", component: UserProfileComponent }
 ];
