@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { User } from '../models/User';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-subscrpition',
@@ -8,6 +9,8 @@ import { User } from '../models/User';
   styleUrls: ['./subscrpition.component.css']
 })
 export class SubscrpitionComponent {
+
+  constructor(private fb: FormBuilder) {}
 
   user = new User('', '', '', {street: '', city: '', postalCode: ''})
 
@@ -33,6 +36,16 @@ export class SubscrpitionComponent {
     this.user.address.city = addressValue.city || '';
     this.user.address.postalCode = addressValue.postalCode || '';
     this.user.address.street = addressValue.street || '';
+  }
 
+  userForm = this.fb.group({
+    credentials : this.fb.group({
+      email: '',
+      password: ''
+    })
+  })
+
+  onSubmit() {
+    console.log(this.userForm.value)
   }
 }

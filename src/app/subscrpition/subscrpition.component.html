@@ -1,5 +1,5 @@
 <div>
-  <h1>Inscription avec Reactive Form</h1>
+  <h1>Inscription avec Reactive Form (quête 1)</h1>
   <div >
     <input type="text" [formControl]="username" placeholder="Nom d'utilisateur" />
     <input type="text" [formControl]="email" placeholder="Email" />
@@ -19,5 +19,15 @@
     <p>Street: {{ user.address.street }} </p>
     <p>City: {{ user.address.city }} </p>
     <p>Postal Code: {{ user.address.postalCode }} </p>
+</div>
 
+<div>
+  <h1>Inscription avec React Form (quête 2)</h1>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="credentials">
+      <input type="email" formControlName="email" placeholder="Email" />
+      <input type="password" formControlName="password" placeholder="Mot de passe"/>
+      <button type="submit">Envoyer</button>
+    </div>
+  </form>
 </div>
